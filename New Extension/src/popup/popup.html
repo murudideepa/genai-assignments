@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Quality Review</title>
+    <link rel="stylesheet" href="popup.css" />
+  </head>
+  <body>
+    <main class="app">
+      <header class="header">
+        <div class="brand-mark" aria-hidden="true">ST</div>
+        <div>
+          <p class="eyebrow">QUALITY REVIEW</p>
+          <h1>Quality Review</h1>
+        </div>
+      </header>
+
+      <form id="review-form">
+        <label for="story">User story</label>
+        <textarea id="story" name="story" rows="3" placeholder="As a [user], I want [goal] so that [benefit]." required></textarea>
+
+        <label for="criteria">Acceptance criteria</label>
+        <textarea id="criteria" name="criteria" rows="5" placeholder="List each criterion on a new line." required></textarea>
+
+        <label for="test-cases">Test cases</label>
+        <textarea id="test-cases" name="test-cases" rows="5" placeholder="Include test steps and expected results." required></textarea>
+
+        <label for="api-key">Groq API key <span class="label-note">used only for this review</span></label>
+        <input id="api-key" name="api-key" type="password" autocomplete="off" placeholder="Paste your Groq API key" required />
+        <p class="privacy-note">Your story and tests are sent to Groq. The API key is not saved. <a href="https://console.groq.com/keys" target="_blank" rel="noreferrer">Get a Groq API key</a></p>
+
+        <button id="review-button" type="submit">Review test cases <span aria-hidden="true">→</span></button>
+      </form>
+
+      <p id="status" class="status" role="status" aria-live="polite"></p>
+      <section id="results" class="results" aria-labelledby="results-title" hidden>
+        <div class="results-heading">
+          <p class="eyebrow">REVIEW REPORT</p>
+          <h2 id="results-title">Findings</h2>
+        </div>
+        <pre id="report"></pre>
+      </section>
+
+      <footer><a href="../options/options.html" target="_blank">Provider settings</a></footer>
+    </main>
+    <script src="popup.js"></script>
+  </body>
+</html>

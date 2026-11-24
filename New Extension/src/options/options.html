@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Groq settings · Quality Review</title>
+    <link rel="stylesheet" href="options.css" />
+  </head>
+  <body>
+    <main class="settings">
+      <a class="back-link" href="../popup/popup.html">← Back to review</a>
+      <header>
+        <p class="eyebrow">CONFIGURATION</p>
+        <h1>Provider settings</h1>
+        <p class="intro">Quality Review uses Groq's OpenAI-compatible API. Enter your Groq API key in the review form; the key is requested each time and never stored by this extension.</p>
+      </header>
+
+      <form id="settings-form">
+        <label for="api-url">Groq API endpoint</label>
+        <input id="api-url" name="api-url" type="url" placeholder="https://api.groq.com/openai/v1/chat/completions" required />
+        <p class="help">Groq's OpenAI-compatible chat-completions endpoint. <a href="https://console.groq.com/docs/openai" target="_blank" rel="noreferrer">Groq API docs</a></p>
+
+        <label for="model">Groq model ID</label>
+        <input id="model" name="model" type="text" placeholder="openai/gpt-oss-120b" required />
+        <p class="help">Default: <code>openai/gpt-oss-120b</code>. See <a href="https://console.groq.com/docs/models" target="_blank" rel="noreferrer">available Groq models</a> for current model IDs.</p>
+
+        <button type="submit">Save provider settings</button>
+        <p id="status" role="status" aria-live="polite"></p>
+      </form>
+
+      <aside>
+        <strong>Privacy reminder</strong>
+        <p>Your user story, acceptance criteria, and test cases are sent to the endpoint you configure. Only use a provider you trust and are authorized to send this information to.</p>
+      </aside>
+    </main>
+    <script src="options.js"></script>
+  </body>
+</html>
