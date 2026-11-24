@@ -1,0 +1,32 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Login</title>
+    <link rel="stylesheet" href="styles/style.css">
+    <script src="scripts/app.js" defer></script>
+  </head>
+  <body>
+    <main class="page">
+      <section class="card" id="login-page" aria-labelledby="login-title">
+        <h1 id="login-title">Login</h1>
+        <form id="login-form">
+          <label for="username">Username</label>
+          <input id="username" name="username" type="text" autocomplete="username" required>
+
+          <label for="password">Password</label>
+          <input id="password" name="password" type="password" autocomplete="current-password" required>
+
+          <p class="error" id="login-error" role="alert" hidden>Incorrect username or password.</p>
+          <button type="submit">Login</button>
+        </form>
+      </section>
+
+      <section class="card" id="home-page" aria-labelledby="home-title" hidden>
+        <h1 id="home-title" tabindex="-1">Home</h1>
+        <p>You are logged in.</p>
+      </section>
+    </main>
+  </body>
+</html>
